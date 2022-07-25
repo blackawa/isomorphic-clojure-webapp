@@ -1,0 +1,3 @@
+{:output {:exclude-files ["dev"]}
+ :lint-as {:rum.core/defc clojure.core/defn
+           :rum.core/defcs clojure.core/defn}}

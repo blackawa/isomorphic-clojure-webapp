@@ -1,0 +1,17 @@
+{:duct.profile/base
+ {:duct.core/project-ns isomorphic-clojure-webapp
+
+  :duct.router/reitit
+  {:routes [["/" {:get #ig/ref :isomorphic-clojure-webapp.handler.app/index}]]}
+
+  :isomorphic-clojure-webapp.handler.app/index {}}
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ :duct.profile/prod  {}
+
+ :duct.module/logging {}
+ :duct.module.web/api
+ {}
+ :duct.module/sql
+ {}}

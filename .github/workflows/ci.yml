@@ -1,0 +1,49 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: lein deps
+      - name: Check format
+        run: lein format:check
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: lein deps
+      - name: Run static analytics
+        run: lein idiom:check
+  unit-test-backend:
+    needs: 
+      - format
+      - lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: lein deps
+      - name: Run tests
+        run: lein test
+  unit-test-frontend:
+    needs: 
+      - format
+      - lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile and run tests
+        run: npm run ci
