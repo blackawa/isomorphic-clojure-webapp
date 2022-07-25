@@ -83,10 +83,22 @@ open localhost:8021
 ターミナルから実行しましょう。
 
 ```sh
-lein idiom:{check|fix} # 
+lein idiom:{check|fix}
 lein format:{check|fix}
-lein lint
 ```
+
+## テンプレートリポジトリのTODO
+
+- [ ] テストハーネス（with-system）の用意
+- [ ] テンプレートから生成した直後の、プロジェクト名変更の方法を書き起こす
+- [ ] 継続的開発環境の提供
+- [ ] テストのモッキング
+- [ ] specの適用
+- [ ] BDD
+- [ ] CSS in JS
+- [ ] フロントエンドの状態管理
+- [ ] MySQLなりPostgreSQLなりの、サーバーが必要な開発環境に移行
+- [ ] schemaspy対応
 
 ## Legal
 
