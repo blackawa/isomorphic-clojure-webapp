@@ -1,6 +1,5 @@
 (ns isomorphic-clojure-webapp.ui.pages.start
-  (:require
-    [rum.core :refer [defc]]))
+  (:require [rum.core :refer [defc]]))
 
 
 (defc ui

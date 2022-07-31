@@ -1,10 +1,9 @@
 (ns isomorphic-clojure-webapp.ui.root
-  (:require
-   [isomorphic-clojure-webapp.ui.pages.start :as start]
-   [isomorphic-clojure-webapp.ui.pages.errors :as errors]
-   [reitit.core :as router]
-   [reitit.frontend.history :as rfh]
-   [rum.core :refer [defc use-effect! use-state]]))
+  (:require [isomorphic-clojure-webapp.ui.pages.errors :as errors]
+            [isomorphic-clojure-webapp.ui.pages.start :as start]
+            [reitit.core :as router]
+            [reitit.frontend.history :as rfh]
+            [rum.core :refer [defc use-effect! use-state]]))
 
 
 (def ^:private routing
@@ -12,8 +11,8 @@
          :title "スタートアップ"
          :view  start/ui}]
    ["/*" {:name :not-found
-         :title "見つかりませんでした"
-         :view errors/not-found}]])
+          :title "見つかりませんでした"
+          :view errors/not-found}]])
 
 
 (defc root

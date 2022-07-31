@@ -1,7 +1,6 @@
 (ns isomorphic-clojure-webapp.handler.app
-  (:require
-    [integrant.core :as ig]
-    [rum.core :refer [render-html]]))
+  (:require [integrant.core :as ig]
+            [rum.core :refer [render-html]]))
 
 
 (defmethod ig/init-key ::index [_ _]

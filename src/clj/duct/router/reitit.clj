@@ -1,11 +1,10 @@
 (ns duct.router.reitit
-  (:require
-    [clojure.walk :as walk]
-    [duct.core.resource]
-    [integrant.core :as ig]
-    [reitit.coercion.spec :as coercion.spec]
-    [reitit.ring :as ring]
-    [reitit.ring.coercion :as ring.coercion]))
+  (:require [clojure.walk :as walk]
+            [duct.core.resource]
+            [integrant.core :as ig]
+            [reitit.coercion.spec :as coercion.spec]
+            [reitit.ring :as ring]
+            [reitit.ring.coercion :as ring.coercion]))
 
 
 (def default-route-opts

@@ -1,6 +1,8 @@
 {;; Legacy config for cljstyle, but required by cljfmt bundled in Calva...
- :indents {bind-context [[:block 1]]}
- :rules {:whitespace {:remove-surrounding? true
+ :indents {bind-context [[:block 1]]
+           require [[:inner 0]]}
+ :rules {:namespaces {:break-libs? false}
+         :whitespace {:remove-surrounding? true
                       :remove-trailing? true
                       :insert-missing? true}
          :blank-lines {:trim-consecutive? false}}}

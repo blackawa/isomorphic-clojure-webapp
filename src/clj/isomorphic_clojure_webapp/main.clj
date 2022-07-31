@@ -1,7 +1,6 @@
 (ns isomorphic-clojure-webapp.main
   (:gen-class)
-  (:require
-    [duct.core :as duct]))
+  (:require [duct.core :as duct]))
 
 
 (duct/load-hierarchy)
