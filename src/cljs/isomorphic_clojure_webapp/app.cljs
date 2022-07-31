@@ -8,7 +8,6 @@
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 
 
-(defn init
+(defn ^:dev/after-load init
   []
-  (js/console.log "Hello from ClojureScript")
   (mount (root) (js/document.getElementById "app")))

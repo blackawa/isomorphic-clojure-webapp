@@ -4,6 +4,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "cypress": "^10.3.1",
     "karma": "^6.4.0",
     "karma-chrome-launcher": "^3.1.1",
     "karma-cljs-test": "^0.1.0",
@@ -12,6 +13,7 @@
   "scripts": {
     "dev": "shadow-cljs watch app test",
     "ci:compile": "shadow-cljs compile ci",
-    "ci:run": "karma start --single-run"
+    "ci:unit-test": "karma start --single-run",
+    "ci:integration-test": "cypress run"
   }
 }

@@ -19,3 +19,9 @@ pom.xml.asc
 /.clj-kondo/.cache
 /.eastwood
 /out
+/.clj-kondo/.cache
+/.calva/output-window/output.calva-repl
+/.shadow-cljs
+/.lsp
+/cypress/videos
+/cypress/screenshots

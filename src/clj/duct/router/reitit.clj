@@ -40,5 +40,5 @@
   (ring/ring-handler
     (ring/router routes opts)
     (ring/routes
-      (ring/create-resource-handler {:path "/static-resources"})
+      (ring/create-resource-handler {:path "/"})
       (ring/create-default-handler default-handlers))))

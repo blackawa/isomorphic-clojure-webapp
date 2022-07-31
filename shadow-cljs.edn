@@ -5,8 +5,9 @@
 
  :dependencies
  [[cljfmt "0.8.0"]
-  [cljs-http "0.1.46"]
+  [clj-commons/cljss "1.6.4"]
   [clj-kondo "RELEASE"]
+  [cljs-http "0.1.46"]
   [metosin/reitit "0.5.18"]
   [rum "0.12.9"]]
  

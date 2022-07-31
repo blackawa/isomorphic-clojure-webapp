@@ -12,4 +12,4 @@
      :body (render-html [:html
                          [:body
                           [:#app]
-                          [:script {:src "/static-resources/js/main.js"}]]])}))
+                          [:script {:src "/js/main.js"}]]])}))

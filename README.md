@@ -47,7 +47,7 @@ dev=> (reset)
 :resumed
 ```
 
-また、ClojureScriptを開発するには、下記を実行します
+また、ClojureScriptでアプリケーションを開発するには、下記を実行します
 
 ```sh
 npm run dev
@@ -71,10 +71,9 @@ dev=> (test ['awesome.app-test/create!-test 'awesome.app-test/update!-test]) ; �
 
 #### フロントエンドの単体テスト
 
-専用のビルドプロセスを走らせておきましょう。
+`npm run dev` を開始していれば、下記にアクセスすることで自動的に単体テストが実行されます。
 
 ```sh
-npm run test:dev
 open localhost:8021
 ```
 
@@ -87,16 +86,24 @@ lein idiom:{check|fix}
 lein format:{check|fix}
 ```
 
+#### 結合テスト
+
+ターミナルから実行しましょう。
+
+```sh
+npm run test:integration
+```
+
 ## テンプレートリポジトリのTODO
 
+- [x] CSS in JS
+- [x] BDD
 - [ ] マイグレーション環境の用意
 - [ ] テストハーネス（with-system）の用意
 - [ ] テンプレートから生成した直後の、プロジェクト名変更の方法を書き起こす
-- [ ] 継続的開発環境の提供
+- [ ] 継続的開発環境(ブラウザIDE)の提供
 - [ ] テストのモッキング
 - [ ] specの適用
-- [ ] BDD
-- [ ] CSS in JS
 - [ ] フロントエンドの状態管理
 - [ ] MySQLなりPostgreSQLなりの、サーバーが必要な開発環境に移行
 - [ ] schemaspy対応
