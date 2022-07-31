@@ -94,18 +94,29 @@ lein format:{check|fix}
 npm run test:integration
 ```
 
+### マイグレーションの追加
+
+`resources/config.edn` の `:duct.profile/base` 内に下記を追加しましょう。
+
+```clj
+:duct.migrator/ragtime {:migrations [#ig/ref your.first.migration]}
+[:duct.migrator.ragtime/sql :your.first.migration] {:up "create table tasks (id integer autoincrement primary key, label varcahr(128) not null);"
+                                                    :down "drop table tasks;"}
+```
+
+その後、開発サーバーを `(reset)` しましょう。マイグレーションが実行されます。
+
+ductのマイグレーターには下記のような機能もあります。詳しくは [duct-framework/migrator.ragtime](https://github.com/duct-framework/migrator.ragtime) を読んでください。
+
+- SQLファイルを利用する
+- 本番環境でマイグレーターのみを実行する
+
 ## テンプレートリポジトリのTODO
 
-- [x] CSS in JS
-- [x] BDD
-- [ ] マイグレーション環境の用意
 - [ ] テストハーネス（with-system）の用意
-- [ ] テンプレートから生成した直後の、プロジェクト名変更の方法を書き起こす
 - [ ] 継続的開発環境(ブラウザIDE)の提供
 - [ ] テストのモッキング
 - [ ] specの適用
-- [ ] フロントエンドの状態管理
-- [ ] MySQLなりPostgreSQLなりの、サーバーが必要な開発環境に移行
 - [ ] schemaspy対応
 
 ## Legal
