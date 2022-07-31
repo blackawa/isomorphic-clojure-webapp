@@ -47,7 +47,16 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
-      - name: Compile tests
+      - name: Compile
         run: npm run ci:compile
       - name: Run tests
-        run: npm run ci:run
+        run: npm run ci:unite-test
+  integration-test:
+    needs:
+      - unit-test-backend
+      - unit-test-frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run integration tests
+        run: npm run ci:integration-test
