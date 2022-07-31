@@ -48,4 +48,4 @@
                                          ["kibit" "src" "test" "--replace"]]
                             "format:check" ["run" "-m" "cljstyle.main" "check" "src"]
                             "format:fix" ["run" "-m" "cljstyle.main" "fix" "src"]
-                            "coverage" ["cloverage"]}}})
+                            "test" ["cloverage"]}}})
