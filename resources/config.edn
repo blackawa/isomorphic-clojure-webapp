@@ -1,6 +1,15 @@
 {:duct.profile/base
  {:duct.core/project-ns isomorphic-clojure-webapp
 
+  :duct.middleware.web/defaults {:cookie true
+                                 :session {:flash true
+                                           :cookie-attrs {:http-only true
+                                                          ;;:same-site :strict
+                                                          :max-age 3600}}
+                                 :params {:urlencoded true
+                                          :multipart true}
+                                 :responses {:absolute-redirects true}} 
+  
   :duct.router/reitit
   {:routes [["/" {:get #ig/ref :isomorphic-clojure-webapp.handler.app/index}]
             ["/app/*" {:get #ig/ref :isomorphic-clojure-webapp.handler.app/index}]]}
