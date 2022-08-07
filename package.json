@@ -16,6 +16,6 @@
     "ci:compile": "shadow-cljs compile ci",
     "ci:unit-test": "karma start --single-run",
     "ci:integration-test": "cypress run",
-    "prepare": "husky install"
+    "prepare": "husky install && git config --add diff.tool difftastic && git config --add difftool.prompt false && git config --add difftool.difftastic.cmd 'difft \"$LOCAL\" \"$REMOTE\"' && git config --add core.pager.difftool true"
   }
 }
