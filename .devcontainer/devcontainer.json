@@ -29,6 +29,7 @@
 			
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
+				"MS-CEINTL.vscode-language-pack-ja",
 				"vscjava.vscode-java-pack",
 				"borkdude.clj-kondo",
 				"betterthantomorrow.calva",
