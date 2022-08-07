@@ -2,7 +2,22 @@
 
 バックエンドもフロントエンドもClojureで書くためのプロジェクトテンプレートです.
 
+:warning::warning::warning: Windowsユーザーは必ずWSL2のファイルシステム上にクローンしてください。ホットリロードが効かず、開発体験を著しく損ねます。WSL2について詳しくは[こちら](https://docs.microsoft.com/ja-jp/windows/wsl/setup/environment#file-storage) :warning::warning::warning:
+
 ## 開発
+
+### 準備（VSCode+Calvaの場合）
+
+このリポジトリの推奨開発環境は、VSCode+devcontainer+Calvaです。
+コードベースを開くとdevcontainerを利用するか確認されるので、承認してください。
+見逃した時は、コマンドパレットから `Remote-Container: Reopen in container` を選択してください。
+
+初回のみ、
+
+- Dockerイメージのビルドプロセス
+- 推奨プラグインのインストールの要否
+
+を確認されます。どちらも受け入れてください。
 
 ### 準備
 
