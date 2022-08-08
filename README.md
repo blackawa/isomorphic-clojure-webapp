@@ -114,9 +114,9 @@ npm run test:integration
 `resources/config.edn` の `:duct.profile/base` 内に下記を追加しましょう。
 
 ```clj
-:duct.migrator/ragtime {:migrations [#ig/ref your.first.migration]}
-[:duct.migrator.ragtime/sql :your.first.migration] {:up "create table tasks (id integer autoincrement primary key, label varcahr(128) not null);"
-                                                    :down "drop table tasks;"}
+:duct.migrator/ragtime {:migrations [#ig/ref your.first.migration/create_tasks_table]}
+[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] {:up ["create table tasks (id integer autoincrement primary key, label varcahr(128) not null);"]
+                                                                       :down ["drop table tasks;"]}
 ```
 
 その後、開発サーバーを `(reset)` しましょう。マイグレーションが実行されます。
@@ -128,14 +128,11 @@ ductのマイグレーターには下記のような機能もあります。詳�
 
 ## テンプレートリポジトリのTODO
 
-- [ ] リモートコンテナの提供
-    - [ ] GitLensとdifftasticを使った差分表示
-    - [ ] NodeとJavaが使える環境
 - [ ] テストのモッキング例
 - [ ] specの適用例
 - [ ] schemaspyによるER図の自動生成とチーム共有
 - [ ] カバレッジレポートの開発者への共有
-- [ ] Dockerイメージ作成（マイグレーションも実行する）
+- [ ] Dockerイメージ作成（マイグレーションも実行する） & デプロイ
 
 ## Legal
 
