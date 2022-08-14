@@ -65,6 +65,7 @@ dev=> (reset)
 また、ClojureScriptでアプリケーションを開発するには、下記を実行します
 
 ```sh
+npm install # 初回のみ
 npm run dev
 ```
 
