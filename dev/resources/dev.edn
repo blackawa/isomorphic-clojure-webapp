@@ -5,4 +5,5 @@
   :username "app"
   :password "p@ssw0rd"
   :database-name "app"
-  :stringtype "unspecified"}}
+  ;; :stringtype "unspecified"
+  }}
