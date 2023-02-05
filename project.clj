@@ -10,13 +10,14 @@
                  [metosin/reitit "0.5.18"]
                  [org.clojure/clojure "1.10.3"]
                  [org.clojure/spec.alpha "0.3.218"]
-                 [org.xerial/sqlite-jdbc "3.34.0"]
+                 [org.postgresql/postgresql "42.5.3"]
                  [rum "0.12.9"]]
   :plugins [[duct/lein-duct "0.12.3"]
             [lein-cloverage "1.2.2"]
             [lein-kibit "0.1.8"]
             [mvxcvi/cljstyle "0.15.0"]
             [jonase/eastwood "1.2.4"]]
+  :uberjar-name "app.jar"
   :main ^:skip-aot isomorphic-clojure-webapp.main
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]

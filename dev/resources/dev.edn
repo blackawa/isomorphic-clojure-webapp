@@ -1,2 +1,8 @@
-{:duct.database/sql
- {:connection-uri "jdbc:sqlite:db/dev.sqlite"}}
+{:duct.database.sql/hikaricp
+ {:adapter "postgresql"
+  :server-name "db"
+  :port-number "5432"
+  :username "app"
+  :password "p@ssw0rd"
+  :database-name "app"
+  :stringtype "unspecified"}}
