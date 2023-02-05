@@ -1,0 +1,21 @@
+version: '3'
+services:
+  workspace:
+    build: 
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        # Update the VARIANT arg to pick a Java version.
+        # Append -bullseye or -buster to pin to an OS version.
+        # Use the -bullseye variants on local arm64/Apple Silicon.
+        VARIANT: '17'
+        # Options
+        CLOJURE_VERSION: '1.10.3'
+        INSTALL_CLOJURE_CLI: 'true'
+        INSTALL_BOOT: 'false'
+        INSTALL_LEININGEN: 'true'
+        INSTALL_POLYLITH: 'true'
+        NODE_VERSION: 'lts/*'
+    volumes: 
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"

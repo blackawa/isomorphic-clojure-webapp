@@ -86,3 +86,4 @@ RUN curl -OL https://github.com/Wilfred/difftastic/releases/download/0.31.0/diff
 
 # Clean up package lists
 RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
