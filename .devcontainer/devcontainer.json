@@ -2,22 +2,10 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/clojure
 {
 	"name": "Isomorphic Clojure Webapp",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// Update the VARIANT arg to pick a Java version.
-			// Append -bullseye or -buster to pin to an OS version.
-			// Use the -bullseye variants on local arm64/Apple Silicon.
-			"VARIANT": "17",
-			// Options
-			"CLOJURE_VERSION": "1.10.3",
-			"INSTALL_CLOJURE_CLI": "true",
-			"INSTALL_BOOT": "false",
-			"INSTALL_LEININGEN": "true",
-			"INSTALL_POLYLITH": "true",
-			"NODE_VERSION": "lts/*"
-		}
-	},
+	"dockerComposeFile": ["../docker-compose.yml", "./docker-compose.devcontainer.yml"],
+	"service": "workspace",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -29,11 +17,9 @@
 			
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"MS-CEINTL.vscode-language-pack-ja",
-				"vscjava.vscode-java-pack",
-				"borkdude.clj-kondo",
 				"betterthantomorrow.calva",
-				"eamodio.gitlens"
+				"MS-CEINTL.vscode-language-pack-ja",
+				"vscjava.vscode-java-pack"
 			]
 		}
 	},
