@@ -1,20 +1,20 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/clojure
 {
-	"name": "Isomorphic Clojure Webapp",
-	"dockerComposeFile": ["../docker-compose.yml", "./docker-compose.devcontainer.yml"],
+	"name": "Isomorphic Clojure Webapp(Rename me in devcontainer.json)",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"./docker-compose.devcontainer.yml"
+	],
 	"service": "workspace",
 	"workspaceFolder": "/workspace",
 	"shutdownAction": "stopCompose",
-
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": { 
-			},
-			
+			"settings": {},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"betterthantomorrow.calva",
@@ -23,13 +23,10 @@
 			]
 		}
 	},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "java -version",
-
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }

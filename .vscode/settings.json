@@ -1,1 +1,4 @@
-{"calva.fmt.configPath": ".cljstyle"}
+{
+    "calva.fmt.configPath": ".cljstyle",
+    "editor.formatOnSave": true
+}

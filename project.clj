@@ -14,7 +14,6 @@
                  [rum "0.12.9"]]
   :plugins [[duct/lein-duct "0.12.3"]
             [lein-cloverage "1.2.2"]
-            [lein-kibit "0.1.8"]
             [mvxcvi/cljstyle "0.15.0"]
             [jonase/eastwood "1.2.4"]]
   :uberjar-name "app.jar"
@@ -41,12 +40,10 @@
                                    [mvxcvi/cljstyle "0.15.0" :exclusions [org.clojure/clojure]]]
                   :aliases {"idiom:check" ["do"
                                            ["eastwood"]
-                                           ["run" "-m" "clj-kondo.main" "--lint" "src" "test"]
-                                           ["kibit" "src" "test"]]
+                                           ["run" "-m" "clj-kondo.main" "--lint" "src" "test"]]
                             "idiom:fix" ["do"
                                          ["eastwood"]
-                                         ["run" "-m" "clj-kondo.main" "--lint" "src" "test"]
-                                         ["kibit" "src" "test" "--replace"]]
-                            "format:check" ["run" "-m" "cljstyle.main" "check" "src"]
-                            "format:fix" ["run" "-m" "cljstyle.main" "fix" "src"]
+                                         ["run" "-m" "clj-kondo.main" "--lint" "src" "test"]]
+                            "format:check" ["run" "-m" "cljstyle.main" "check" "src" "test"]
+                            "format:fix" ["run" "-m" "cljstyle.main" "fix" "src" "test"]
                             "test" ["cloverage"]}}})
