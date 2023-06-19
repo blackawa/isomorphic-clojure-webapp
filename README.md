@@ -102,6 +102,13 @@ lein idiom:{check|fix}
 lein format:{check|fix}
 ```
 
+JVMの起動オーバーヘッドが邪魔なので、REPLから起動することもできます.
+
+```clojure
+dev=> (format:fix) ; fix format
+dev=> (lint:check) ; run clj-kondo
+```
+
 #### 結合テスト
 
 ターミナルから実行しましょう。
@@ -129,12 +136,14 @@ ductのマイグレーターには下記のような機能もあります。詳�
 
 ## テンプレートリポジトリのTODO
 
-- [ ] テストのモッキング例
+- [ ] テストのモック
 - [ ] バリデーション例
-- [ ] schemaspyによるER図の自動生成とチーム共有
-- [ ] カバレッジレポートの開発者への共有
+- [ ] SchemaSpyによるER図の自動生成
+- [ ] カバレッジレポートの生成
+- [ ] Storybookを使ったカタログ管理
+- [ ] GitHub Actions + AWS S3(or Google Cloud Storage) を使った、ER図、カバレッジレポート、Storybookのブランチごとの管理
 - [ ] Dockerイメージ作成（マイグレーションも実行する） & デプロイ
 
 ## Legal
 
-Copyright © 2022 blackawa
+Copyright © 2023 blackawa
