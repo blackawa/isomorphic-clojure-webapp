@@ -123,7 +123,7 @@ npm run test:integration
 
 ```clj
 :duct.migrator/ragtime {:migrations [#ig/ref your.first.migration/create_tasks_table]}
-[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] {:up ["create table tasks (id integer autoincrement primary key, label varcahr(128) not null);"]
+[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] {:up ["create table tasks (id serial primary key, label varcahr(128) not null);"]
                                                                        :down ["drop table tasks;"]}
 ```
 
@@ -133,6 +133,14 @@ ductのマイグレーターには下記のような機能もあります。詳�
 
 - SQLファイルを利用する
 - 本番環境でマイグレーターのみを実行する
+
+また、このアプリケーションでは `loader.clj` 内で `#migration` タグのリーダーが設定されています。
+
+```clj
+[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] #migration "create_tasks_table"
+```
+
+と書くと、 `resources/migrations` 配下の `create_tasks_table.(up|down).sql` をロードしてくれます。
 
 ## テンプレートリポジトリのTODO
 

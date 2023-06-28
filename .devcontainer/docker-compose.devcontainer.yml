@@ -1,7 +1,7 @@
 version: '3'
 services:
   workspace:
-    build: 
+    build:
       context: .
       dockerfile: .devcontainer/Dockerfile
       args:
@@ -16,6 +16,7 @@ services:
         INSTALL_LEININGEN: 'true'
         INSTALL_POLYLITH: 'true'
         NODE_VERSION: 'lts/*'
-    volumes: 
+    volumes:
       - .:/workspace:cached
+      - ~/.m2/:/home/vscode/.m2
     command: /bin/sh -c "while sleep 1000; do :; done"

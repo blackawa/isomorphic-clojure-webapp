@@ -19,7 +19,10 @@
 			"extensions": [
 				"betterthantomorrow.calva",
 				"MS-CEINTL.vscode-language-pack-ja",
-				"vscjava.vscode-java-pack"
+				"vscjava.vscode-java-pack",
+				"MS-vsliveshare.vsliveshare",
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg"
 			]
 		}
 	},
