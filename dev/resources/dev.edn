@@ -6,4 +6,5 @@
   :password "p@ssw0rd"
   :database-name "app"
   ;; :stringtype "unspecified"
-  }}
+  }
+ [:duct/const :duct.router.swagger/enabled?] true}

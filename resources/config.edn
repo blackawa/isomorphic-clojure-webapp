@@ -8,13 +8,20 @@
                                                           :max-age 3600}}
                                  :params {:urlencoded true
                                           :multipart true}
-                                 :responses {:absolute-redirects true}} 
-  
+                                 :responses {:absolute-redirects true}}
+
   :duct.router/reitit
   {:routes [["/" {:get #ig/ref :isomorphic-clojure-webapp.handler.app/index}]
-            ["/app/*" {:get #ig/ref :isomorphic-clojure-webapp.handler.app/index}]]}
+            ["/app/*" {:get #ig/ref :isomorphic-clojure-webapp.handler.app/index}]
+            ["/swagger" {:no-doc true}
+             ["/api-docs/*" {:get #ig/ref :duct.router.swagger/ui}]
+             ["/swagger.json" {:get #ig/ref :duct.router.swagger/json}]]]}
 
-  :isomorphic-clojure-webapp.handler.app/index {}}
+  :isomorphic-clojure-webapp.handler.app/index {}
+  :duct.router.swagger/ui {:enabled? #ig/ref [:duct/const :duct.router.swagger/enabled?]}
+  :duct.router.swagger/json {:enabled? #ig/ref [:duct/const :duct.router.swagger/enabled?]}
+
+  [:duct/const :duct.router.swagger/enabled?] false}
 
  :duct.profile/dev   #duct/include "dev"
  :duct.profile/local #duct/include "local"

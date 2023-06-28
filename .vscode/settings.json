@@ -1,1 +1,54 @@
-{"calva.fmt.configPath": ".cljstyle"}
+{
+    "calva.fmt.configPath": ".cljstyle",
+    "editor.formatOnSave": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 15432,
+            "driver": "PostgreSQL",
+            "name": "test",
+            "group": "localhost",
+            "database": "app_test",
+            "username": "app",
+            "password": "p@ssw0rd"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 15432,
+            "driver": "PostgreSQL",
+            "name": "app",
+            "group": "localhost",
+            "database": "app",
+            "username": "app",
+            "password": "p@ssw0rd"
+        },
+        {
+            "previewLimit": 50,
+            "server": "db",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "app",
+            "group": "devcontainer",
+            "database": "app",
+            "username": "app",
+            "password": "p@ssw0rd"
+        },
+        {
+            "previewLimit": 50,
+            "server": "db",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "test",
+            "group": "devcontainer",
+            "database": "app_test",
+            "username": "app_test",
+            "password": "p@ssw0rd"
+        }
+    ],
+    "files.insertFinalNewline": true,
+    "sqltools.format": {
+        "linesBetweenQueries": "preserve"
+    }
+}

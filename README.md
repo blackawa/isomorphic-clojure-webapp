@@ -102,6 +102,13 @@ lein idiom:{check|fix}
 lein format:{check|fix}
 ```
 
+JVMの起動オーバーヘッドが邪魔なので、REPLから起動することもできます.
+
+```clojure
+dev=> (format:fix) ; fix format
+dev=> (lint:check) ; run clj-kondo
+```
+
 #### 結合テスト
 
 ターミナルから実行しましょう。
@@ -116,7 +123,7 @@ npm run test:integration
 
 ```clj
 :duct.migrator/ragtime {:migrations [#ig/ref your.first.migration/create_tasks_table]}
-[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] {:up ["create table tasks (id integer autoincrement primary key, label varcahr(128) not null);"]
+[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] {:up ["create table tasks (id serial primary key, label varcahr(128) not null);"]
                                                                        :down ["drop table tasks;"]}
 ```
 
@@ -127,14 +134,24 @@ ductのマイグレーターには下記のような機能もあります。詳�
 - SQLファイルを利用する
 - 本番環境でマイグレーターのみを実行する
 
+また、このアプリケーションでは `loader.clj` 内で `#migration` タグのリーダーが設定されています。
+
+```clj
+[:duct.migrator.ragtime/sql :your.first.migration/create_tasks_table] #migration "create_tasks_table"
+```
+
+と書くと、 `resources/migrations` 配下の `create_tasks_table.(up|down).sql` をロードしてくれます。
+
 ## テンプレートリポジトリのTODO
 
-- [ ] テストのモッキング例
+- [ ] テストのモック
 - [ ] バリデーション例
-- [ ] schemaspyによるER図の自動生成とチーム共有
-- [ ] カバレッジレポートの開発者への共有
+- [ ] SchemaSpyによるER図の自動生成
+- [ ] カバレッジレポートの生成
+- [ ] Storybookを使ったカタログ管理
+- [ ] GitHub Actions + AWS S3(or Google Cloud Storage) を使った、ER図、カバレッジレポート、Storybookのブランチごとの管理
 - [ ] Dockerイメージ作成（マイグレーションも実行する） & デプロイ
 
 ## Legal
 
-Copyright © 2022 blackawa
+Copyright © 2023 blackawa

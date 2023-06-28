@@ -25,3 +25,4 @@ pom.xml.asc
 /.lsp
 /cypress/videos
 /cypress/screenshots
+/*.sql
