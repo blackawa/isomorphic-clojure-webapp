@@ -1,6 +1,11 @@
 (ns isomorphic-clojure-webapp.loader
   (:require [clojure.java.io :as io]
-            [duct.core :as duct]))
+            [duct.core :as duct]
+            [next.jdbc.date-time :refer [read-as-local]]))
+
+
+;; Will read Date|Time as LocalDate(Time)? through whole application.
+(read-as-local)
 
 
 (def ^:private config-files
