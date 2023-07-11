@@ -17,6 +17,9 @@
         :modules {:main {:init-fn isomorphic-clojure-webapp.app/init}}}
   :test {:target :browser-test
          :test-dir "out/test"}
+  :storybook {:target :npm-module
+              :output-dir "out/storybook"
+              :entries [isomorphic-clojure-webapp.storybook.first]}
   :ci {:target :karma
-       :output-to "out/ci.js"
+       :output-to "out/ci/ci.js"
        :ns-regexp "-test$"}}}
