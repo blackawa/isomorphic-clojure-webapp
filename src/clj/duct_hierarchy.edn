@@ -1,1 +1,5 @@
-{:duct.router/reitit [:duct/router]}
+{:duct.router/reitit [:duct/router]
+ :duct.module/reitit [:duct/module]
+ :duct.router.reitit.coercion/spec [:duct.router.reitit/coercion]
+ :duct.router.reitit.coercion/schema [:duct.router.reitit/coercion]
+ :duct.router.reitit.coercion/malli [:duct.router.reitit/coercion]}
