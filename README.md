@@ -95,18 +95,24 @@ open localhost:8021
 
 #### 静的解析
 
-ターミナルから実行しましょう。
+REPLから実行しましよう。
+
+```clojure
+dev=> (format:fix) ; fix format
+dev=> (lint:check) ; run clj-kondo
+```
+
+CIのためにターミナルから実行することもできます。
 
 ```sh
 lein idiom:{check|fix}
 lein format:{check|fix}
 ```
 
-JVMの起動オーバーヘッドが邪魔なので、REPLから起動することもできます.
+また、脆弱性検査のために、下記を実行することもできます。
 
-```clojure
-dev=> (format:fix) ; fix format
-dev=> (lint:check) ; run clj-kondo
+```sh
+bin/nvd/run
 ```
 
 #### 結合テスト

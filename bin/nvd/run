@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pushd bin/nvd
+clojure -J-Dclojure.main.report=stderr -M -m nvd.task.check "nvd-clojure.edn" "$(cd ../../; clojure -Spath -A:any:aliases)"
+popd

@@ -14,6 +14,7 @@
   },
   "scripts": {
     "dev": "shadow-cljs watch app test",
+    "package": "shadow-cljs release app",
     "ci:compile": "shadow-cljs compile ci",
     "ci:unit-test": "karma start --single-run",
     "ci:integration-test": "cypress run"
